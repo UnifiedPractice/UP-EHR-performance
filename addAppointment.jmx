@@ -492,7 +492,7 @@
                 <collectionProp name="Arguments.arguments">
                   <elementProp name="" elementType="HTTPArgument">
                     <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                    <stringProp name="Argument.value">{&quot;patientId&quot;:${patient_ID},&quot;practitioners&quot;:[{&quot;practitionerId&quot;:${practitioner_ID},&quot;role&quot;:&quot;Main&quot;}],&quot;serviceId&quot;:${id},&quot;serviceForNewPatient&quot;:false,&quot;locationId&quot;:${location_ID},&quot;roomId&quot;:15,&quot;reasonForVisit&quot;:&quot;Reason to visit\n&quot;,&quot;appointmentType&quot;:&quot;SelfPay&quot;,&quot;startTime&quot;:&quot;2020-04-03T06:00:00.000Z&quot;}&#xd;
+                    <stringProp name="Argument.value">{&quot;patientId&quot;:${patient_ID},&quot;practitioners&quot;:[{&quot;practitionerId&quot;:${practitioner_ID},&quot;role&quot;:&quot;Main&quot;}],&quot;serviceId&quot;:${id},&quot;serviceForNewPatient&quot;:false,&quot;locationId&quot;:${location_ID},&quot;roomId&quot;:15,&quot;reasonForVisit&quot;:&quot;Reason to visit\n&quot;,&quot;appointmentType&quot;:&quot;SelfPay&quot;,&quot;startTime&quot;:&quot;${MINUTE}&quot;}&#xd;
 </stringProp>
                     <stringProp name="Argument.metadata">=</stringProp>
                   </elementProp>
@@ -580,7 +580,7 @@ log.info(&quot;MINUTE=&quot; + vars.get(&quot;MINUTE&quot;));
               <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Services" enabled="true">
                 <stringProp name="delimiter">,</stringProp>
                 <stringProp name="fileEncoding"></stringProp>
-                <stringProp name="filename">\EhrServices_CSV\Services.csv</stringProp>
+                <stringProp name="filename">\CSV\Services.csv</stringProp>
                 <boolProp name="ignoreFirstLine">true</boolProp>
                 <boolProp name="quotedData">false</boolProp>
                 <boolProp name="recycle">true</boolProp>
@@ -628,6 +628,8 @@ log.info(&quot;MINUTE=&quot; + vars.get(&quot;MINUTE&quot;));
           </objProp>
           <stringProp name="filename"></stringProp>
         </ResultCollector>
+        <hashTree/>
+        <Summariser guiclass="SummariserGui" testclass="Summariser" testname="Generate Summary Results" enabled="true"/>
         <hashTree/>
       </hashTree>
       <ConfigTestElement guiclass="PropertyControlGui" testclass="ConfigTestElement" testname="Property Display" enabled="true"/>
